@@ -1,21 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title>Unlock the Secret</title>
   </head>
   <style>
     #maindiv{
-      background: url('images/letter.jpg');
+      background: url('images/paper.jpg');
       background-size: cover;
       height: 100vh;
+      padding-top: 20%;
     }
+    #btn{
+      padding: 5px;
+      font-size: 20px;
+      border-radius: 4px;
+      background-color: brown;
+      color: white;
+    }
+    
   </style>
   <body>
+    <script>
+      // Initial check
+  window.onload(checkViewport());
+    </script>
     <div id="maindiv" align="center">
-      <h1>Do you want to know what is inside????</h1>
+      <h1 style="color:brown">Do you want to know what is inside????</h1>
       <br>
       <br>
-      <a href='shreelekha.html'><button>Unlock</button></a>
+      <div id="link">
+        <a href='shreelekha.html'><button id="btn">Unlock</button></a>
+      </div>
+      <div id="warning">
+        <h2 style="color:orangered">Ooops!!! it doesn't seem you are using your PC, please try again with your pc or tablet for better experience!!!</h2>
+      </div>
     </div>
+    
+
+    <script>
+      function checkViewport() {
+    var link = document.getElementById('link');
+    var warning = document.getElementById('warning');
+    var viewportWidth = window.innerWidth;
+
+    if (viewportWidth < 1080) { // Example breakpoint
+        warning.style.display = 'block';
+        link.style.display = 'none';
+    } else {
+        link.style.display = 'block';
+        warning.style.display = 'none';
+    }
+}
+
+// Initial check
+checkViewport();
+
+// Check on window resize
+window.addEventListener('resize', checkViewport);
+    </script>
   </body>
 </html>

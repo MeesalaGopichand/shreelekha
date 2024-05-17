@@ -23,7 +23,7 @@ body, html {
 
 .section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -66,7 +66,7 @@ body, html {
     background-image: url('images/paper.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 70%;
+    width: 75%;
     opacity: 0.5;
     color: rgb(56, 11, 11);
 }
@@ -76,7 +76,7 @@ body, html {
     font-size: 100px;
     font-weight: bolder;
     /* margin-left: 100px; */
-    margin-top: 30%;
+    margin-top: 50%;
     /* align-items: left; */
 }
 .outline{
@@ -131,6 +131,7 @@ body, html {
     margin-right: 10%;
     text-align: center;
     font-family: 'shadow-into-light', cursive;
+    margin-bottom: 20px;
 }
 
 #section4{
@@ -195,7 +196,7 @@ body, html {
     width: 60%;
 }
 .left-section3 {
-    width: 25%; /* Adjust width as needed */
+    width: 45%; /* Adjust width as needed */
     padding: 20px;
     margin-right: 20px; /* Add margin between sections */
     /* background-color: rgba(0, 0, 0, 0.7); */
@@ -204,7 +205,7 @@ body, html {
 }
 
 .right-section3 {
-    width: 30%; /* Adjust width as needed */
+    width: 35%; /* Adjust width as needed */
     padding: 10px;
     /* background-color: rgba(255, 255, 255, 0.7);  */
     /* Dark background with opacity */
