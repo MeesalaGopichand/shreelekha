@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Page Div with Centered Image</title>
+<style>
+  /* body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .full-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f0f0; /* Change this to desired background color */
+  /*}
+  .centered-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+  } */
+  body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.full-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Initially, takes up full viewport height */
+  transition: height 0.5s; /* Smooth transition when height changes */
+  background-color: #f0f0f0; /* Change this to desired background color */
+}
+
+.centered-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.content {
+  /* Add styles for your content here */
+}
+
+</style>
+</head>
+<body>
+  <div class="full-page" id="fullPage">
+    <img class="centered-image" src="images/img1.jpg" alt="Centered Image">
+  </div>
+  <div class="content" id="content">
+    <p>
+        This is sample paragraph. This is sample paragraph.This is sample paragraph.This is sample paragraph.This is sample paragraph.This is sample paragraph.
+        This is sample paragraph.This is sample paragraph.This is sample paragraph.This is sample paragraph.
+        This is sample paragraph.This is sample paragraph.This is sample paragraph.This is sample paragraph.
+        This is sample paragraph.This is sample paragraph.This is sample paragraph.This is sample paragraph.
+    </p>
+  </div>
+
+  <script>
+    const content = document.getElementById('content');
+const fullPage = document.getElementById('fullPage');
+
+const options = {
+  threshold: 0.5
+};
+
+const observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      fullPage.style.height = '100vh';
+    } else {
+      fullPage.style.height = '100%';
+    }
+  });
+}, options);
+
+observer.observe(content);
+
+  </script>
+</body>
+</html>
